@@ -1,7 +1,7 @@
 import os
 
 
-def flutter(menu, tanya, clear):
+def flutter(menu, tanya, cls):
     print("\n---------------------------")
     print(" FLUTTER ")
     print("---------------------------")
@@ -34,6 +34,6 @@ def flutter(menu, tanya, clear):
         menu()
 
     else:
-        clear()
+        cls()
         print("\nPilihan yang anda masukkan salah!")
-        flutter(menu, tanya, clear)
+        flutter(menu, tanya, cls)
