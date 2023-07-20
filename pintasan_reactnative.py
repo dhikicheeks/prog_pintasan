@@ -1,7 +1,7 @@
 import os
 
 
-def reactnative(menu, tanya, clear):
+def reactnative(menu, tanya, cls):
     print("\n---------------------------")
     print(" React Native ")
     print("---------------------------")
@@ -24,6 +24,6 @@ def reactnative(menu, tanya, clear):
     elif pilih == "0":
         menu()
     else:
-        clear()
+        cls()
         print("\nPilihan yang anda masukkan salah!")
-        reactnative(menu, tanya, clear)
+        reactnative(menu, tanya, cls)

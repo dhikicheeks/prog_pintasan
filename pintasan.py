@@ -6,10 +6,10 @@ from pintasan_flutter import flutter
 from pintasan_laravel import laravel
 from pintasan_nodejs import nodejs
 from pintasan_reactnative import reactnative
-
+from sys import platform
 
 def menu():
-    clear()
+    cls()
     print("\n---------------------------")
     print(" MAIN MENU PINTASAN ")
     print("---------------------------")
@@ -23,29 +23,29 @@ def menu():
     pilih = input("Masukkan pilihan [1-4] : ")
 
     if pilih == "1":
-        clear()
-        flutter(menu, tanya, clear)
+        cls()
+        flutter(menu, tanya, cls)
     elif pilih == "2":
-        clear()
-        laravel(menu, tanya, clear)
+        cls()
+        laravel(menu, tanya, cls)
     elif pilih == "3":
-        clear()
-        nodejs(menu, tanya, clear)
+        cls()
+        nodejs(menu, tanya, cls)
     elif pilih == "4":
-        clear()
-        reactnative(menu, tanya, clear)
+        cls()
+        reactnative(menu, tanya, cls)
     elif pilih == "0":
-        clear()
+        cls()
         print("Terima kasih sudah menggunakan aplikasi ini!")
         sys.exit()
     else:
-        clear()
+        cls()
         print("\nPilihan yang anda masukkan salah!")
         menu()
 
 
 def tanya():
-    clear()
+    cls()
     print("\n-----------------------------------------")
     tanya = input(" Ingin mengulang aplikasi lagi? [y/t] : ")
     print("-----------------------------------------")
@@ -57,8 +57,13 @@ def tanya():
         print("Pilihan yang anda masukan salah!")
 
 
-def clear():
-    os.system('clear')
+def cls():
+    if platform == "darwin":
+        os.system('clear')
+        # OS X
+    elif platform == "win32":
+        # Windows...
+        os.system('cls')
 
 
 menu()
